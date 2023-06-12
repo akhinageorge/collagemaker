@@ -76,14 +76,7 @@ class CollageMaker:
         crop_right = crop_left + self.crop_width
         crop_bottom = crop_top + self.crop_height
         cropped_image = rotated_grid_image.crop((crop_left, crop_top, crop_right, crop_bottom))
-
-        overlay_image_path = "Collage Maker\Rectangle 4.png"
-        overlay_image = Image.open(overlay_image_path)
-        cropped_image = cropped_image.convert("RGBA")
-        overlay_image = overlay_image.resize(cropped_image.size)
-        overlay_image = overlay_image.convert("RGBA")  # Convert overlay image to RGBA mode
-        final_image = Image.alpha_composite(cropped_image, overlay_image)
-        final_image.show()
+        cropped_image.show()
 
 target_size = (300, 400)
 rotation_angle = -20
